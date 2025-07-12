@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no"> <!-- ⬅️ ini untuk Safari -->
+  <title>Wedding WE</title>
+
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&family=Poppins&display=swap"
+    rel="stylesheet" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Ballet:opsz@16..72&family=Edu+VIC+WA+NT+Hand+Pre:wght@400..700&family=Gasoek+One&family=Great+Vibes&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+HU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon (Opsional, jika punya) -->
+  <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+
+  <!-- JS -->
+   <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="overlay">
+      <div class="header">
+        <p class="subtitle">The Wedding Of</p>
+        <h1 class="couple-name">Wulan & Fariz</h1>
+      </div>
+
+      <div class="invitation">
+        <p class="to">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+        <p class="guest-name">Tamu Undangan</p>
+        <p class="disclaimer">Mohon maaf jika ada kesalahan penulisan nama dan gelar</p>
+        <button class="open-btn">📩 Open Invitation</button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <a id="home"></a>
+  <section class="verse-section animate fade-in" id="verse-section">
+    <div class="verse-content">
+      <h1 class="animate word-by-word">Wulan & Fariz</h1>
+      <h3 class="animate word-by-word">(QS. AR-RUM AYAT 21)</h3>
+      <p class="arabic animate word-by-word">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+        لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ
+        يَتَفَكَّرُونَ</p>
+      <p class="animate word-by-word">Dan di antara tanda-tanda (kebesaran)-Nya adalah Dia menciptakan bagimu sekutu
+        bagimu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram dengan mereka, dan Dia menciptakan di
+        antara kamu cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda
+        (kebesaran Allah) bagi kaum yang berpikir.</p>
+    </div>
+  </section>
+
+  <!-- Navbar Section -->
+  <div class="navbar-container">
+    <div class="navbar">
+      <div class="logo">Wulan & Fariz</div>
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    </div>
+  </div>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    <a href="#home">HOME</a>
+    <a href="#info">INFO</a>
+    <a href="#story">STORY</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#wedding-event">WEDDING EVENT</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#wedding-gift">GIFTS</a>
+    <a href="#live-streaming">LIVE STREAM</a>
+  </div>
+
+  <!-- The Bride Section -->
+  <section class="bride-groom-section bride animate fade-in" id="info">
+    <div class="overlay"></div>
+    <div class="container">
+      <p class="intro-text animate slide-up">
+        Assalamu'alaikum Warahmatullahi Wabarakaatuh<br>
+        Dengan memohon rahmat dan ridha Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk berkenan
+        menghadiri acara pernikahan kami.
+      </p>
+      <h2 class="section-title animate slide-down">The Bride</h2>
+      <div class="profile-card">
+        <img src="image/ken.jpg" alt="Bride" class="profile-photo">
+        <div class="profile-info animate fade-in">
+          <h3 class="animate slide-up">Wulan Mandasari</h3>
+          <p class="animate slide-down">Putri Pertama dari<br>Bapak Galang Prasetyo & Ibu Dewi Yolanda</p>
+          <div class="social">
+            <i class="bi bi-instagram animate slide-down"></i> @mandasari
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simbol & di antara section -->
+  <div class="amp-wrapper" style="position: relative;">
+    <div class="ampersand-separator">&</div>
+  </div>
+
+  <!-- The Groom Section -->
+  <section class="bride-groom-section groom animate fade-in">
+    <div class="overlay"></div>
+    <div class="container">
+      <h2 class="section-title  animate slide-up">The Groom</h2>
+      <div class="profile-card">
+        <img src="image/mdf.jpg" alt="Groom" class="profile-photo">
+        <div class="profile-info">
+          <h3 class=" animate slide-down">Fariz Ananta</h3>
+          <p class=" animate slide-up">Putra Pertama dari<br>Bapak Arya Saputra & Ibu Dian Wahyuni</p>
+          <div class="social">
+            <i class="bi bi-instagram  animate slide-down"></i> @farizananta
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wedding-event" id="wedding-event">
+    <div class="event-container animate fade-in">
+      <!-- Countdown hanya untuk Akad -->
+      <div class="countdown animate slide-down">
+        <div><span id="days">000</span><small>Hari</small></div>
+        <div><span id="hours">00</span><small>Jam</small></div>
+        <div><span id="minutes">00</span><small>Menit</small></div>
+        <div><span id="seconds">00</span><small>Detik</small></div>
+      </div>
+
+      <div class="event-content">
+        <!-- Akad Section -->
+        <div class="event-block">
+          <h3 class="animate text-reveal">Akad Nikah</h3>
+          <p class="date animate word-by-word ">Sabtu, 31 Januari 2026</p>
+          <p class="time animate word-by-word">08.00 WIB - Selesai</p>
+          <p class="place animate word-by-word">Masjid Kilat Kaduagung</p>
+          <p class="address animate word-by-word">Jl. Gunung Kencana, Kaduagung Timur, Kec. Cibadak, Kabupaten Lebak,
+            Banten 42317</p>
+          <a href="https://maps.google.com" class="map-btn animate slide-up" target="_blank">📍 Lihat di Google Maps</a>
+        </div>
+
+        <!-- Resepsi Section (Tanpa Countdown) -->
+        <div class="event-block animate-on-scroll animate fade-in">
+          <h3 class="animate-on-scroll animate text-reveal">Resepsi</h3>
+          <p class="date animate-on-scroll animate word-by-word">Sabtu, 31 Januari 2026</p>
+          <p class="time animate-on-scroll animate word-by-word">11.00 - 14.00 WIB</p>
+          <p class="place animate-on-scroll animate word-by-word">Hotel Kharisma Rangkasbitung</p>
+          <p class="address animate-on-scroll animate word-by-word">
+            Jl. Otista Raya, No 58, RT/RW : 001 / 004, Cijoro Pasir, Kec. Rangkasbitung, Kabupaten Lebak, Banten 42316
+          </p>
+          <a href="https://maps.google.com" class="map-btn animate-on-scroll animate slide-up" target="_blank">📍 Lihat
+            di Google Maps</a>
+        </div>
+
+  </section>
+
+
+  <section class="rsvp-section" id="rsvp">
+    <div class="rsvp-container animate fade-in">
+      <h3 class="rsvp-title animate slide-right">RSVP</h3>
+      <p class="rsvp-subtitle animate slide-left">
+        Kehadiran Bapak/Ibu/Saudara/i akan menjadi kehormatan besar bagi kami dan keluarga.
+        Mohon konfirmasi kehadiran anda melalui formulir reservasi di bawah ini:
+      </p>
+
+      <form class="rsvp-form animate slide-right" onsubmit="return submitRSVP(event)">
+        <label for="rsvpGuestName">Nama Tamu:</label>
+        <input type="text" id="rsvpGuestName" name="rsvpGuestName" required />
+
+        <label for="attendance">Konfirmasi Kehadiran:</label>
+        <select id="attendance" name="attendance" required>
+          <option value="" disabled selected>Pilih</option>
+          <option value="Hadir">Hadir</option>
+          <option value="Tidak Hadir">Tidak Hadir</option>
+        </select>
+
+        <button type="submit" class="rsvp-btn animate slide-up">📩 Konfirmasi Kehadiran</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="gallery-section animate fade-in" id="gallery">
+    <h2 class="gallery-title animate glow-pulse">Our Gallery</h2>
+    <div class="gallery-wrapper animate fade-in">
+      <div class="gallery-item tilt-left animate glow-pulse">
+        <img src="image/Nei.jpg" alt="Gallery Image 1">
+      </div>
+      <div class="gallery-item tilt-right animate glow-pulse">
+        <img src="image/pppp.jpg" alt="Gallery Image 2">
+      </div>
+      <div class="gallery-item tilt-left animate glow-pulse">
+        <img src="image/wuh.jpg" alt="Gallery Image 3">
+      </div>
+      <div class="gallery-item tilt-right animate glow-pulse">
+        <img src="image/nnn.jpg" alt="Gallery Image 4">
+      </div>
+    </div>
+  </section>
+
+  <section class="love-story-section animate fade-in" id="story">
+    <h2 class="love-story-title animate slide-down ">Our Love Story</h2>
+
+    <div class="love-story-card animate fade-in">
+      <div class="love-story-bg" style="background-image: url('img/awal.jpg');">
+        <div class="love-story-content">
+          <h3 class="animate slide-up ">Awal Bertemu</h3>
+          <p class="animate word-by-word">
+            2020 Kami bertemu di sebuah acara kampus. Meski hanya singkat, kami merasa saling tertarik dan saling ingin
+            mengenal lebih lanjut satu sama lain. Sejak itu, kami mulai semakin dekat.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="love-story-card animate fade-in">
+      <div class="love-story-bg" style="background-image: url('img/bertunangan.jpg');">
+        <div class="love-story-content">
+          <h3 class="animate slide-down">Bertunangan</h3>
+          <p class="animate word-by-word">
+            2022 Kami mulai berencana dan membangun hubungan yang erat. Kami saling mendukung dan tumbuh bersama,
+            melalui berbagai tantangan dan rintangan bersama.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="love-story-card animate fade-in">
+      <div class="love-story-bg" style="background-image: url('img/menikah.jpg');">
+        <div class="love-story-content">
+          <h3 class="animate slide-up">Menikah</h3>
+          <p class="animate word-by-word">
+            2024 Kami memutuskan untuk mengikat janji suci dalam pernikahan. Dalam momen yang penuh cinta dan haru ini,
+            kami melangkah ke jenjang hidup baru, siap untuk menghadapi masa depan bersama dengan saling cinta dan
+            dukungan satu sama lain.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Wedding Gift Section -->
+  <section id="wedding-gift animate fade-in" class="wedding-gift section">
+    <h2 class="wedding-heading animate slide-left">Wedding Gift</h2>
+    <p class="wedding-description animate slide-right">
+      Kehadiran Bapak/Ibu/Saudara/i merupakan hadiah terindah. Namun, apabila hendak memberikan tanda kasih kepada kami,
+      dapat melalui fitur di bawah ini:
+    </p>
+    <a href="#" class="wedding-button animate Looping" id="openModal">
+      <i class="fa-solid fa-gift"></i> Kado Digital
+    </a>
+  </section>
+
+  <!-- Popup Modal -->
+  <div id="giftModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h3>Informasi Rekening</h3>
+      <p><strong>Bank:</strong> BCA</p>
+      <p><strong>No. Rekening:</strong> <span id="rekening-number">1234567890</span></p>
+      <p><strong>Nama Pemilik:</strong> Sella & Ridho</p>
+      <button id="copy-button">Salin Nomor Rekening</button>
+      <p id="copy-message">Nomor rekening berhasil disalin!</p>
+    </div>
+  </div>
+
+
+
+
+  <!-- GUEST WISHES SECTION -->
+  <section class="guest-section animate fade-in" id="guest-book">
+    <div class="guest-border-top"></div>
+    <h2 class="guest-heading animate slide-up">Ucapan & Doa</h2>
+    <p class="guest-description animate slide-down">
+      Kepada Bapak/Ibu/Saudara/i yang ingin memberikan ucapan kepada kami dapat dituliskan di bawah ini:
+    </p>
+
+    <form id="guestForm" class="guest-form animate fade-in"> <!-- ID disesuaikan -->
+      <label for="guestName" class="form-label animate fade-in">Nama Tamu:</label> <!-- ID disesuaikan -->
+      <input type="text" id="guestName" name="nama" class="form-input" required>
+
+      <label for="guestMessage" class="form-label animate fade-in">Ucapan & Doa:</label> <!-- ID disesuaikan -->
+      <textarea id="guestMessage" name="pesan" class="form-textarea" rows="4" required></textarea>
+
+      <button type="submit" class="submit-button animate fade-in">
+        <i class="fa-solid fa-paper-plane animate slide-down"></i> Beri Ucapan
+      </button>
+    </form>
+  </section>
+
+  <section id="guest-wishes">
+    <h2 class="section-heading animate slide-right">Ucapan dan Doa Para Tamu</h2>
+    <div class="wish-count animate slide-left">
+      <span id="wishCounter">Jumlah: 0 Ucapan</span>
+    </div>
+
+    <div class="wishes-container animate fade-in" id="wishList"> <!-- ID disesuaikan -->
+      <!-- Komentar/ucapan akan ditambahkan di sini secara otomatis -->
+    </div>
+
+    <div class="section-border-bottom"></div>
+  </section>
+
+
+
+
+
+  <!-- LIVE STREAMING SECTION -->
+  <section id="live-streaming animate fade-in" class="live-streaming-section">
+    <h2 class="live-heading animate slide-down">Live Streaming</h2>
+    <p class="live-description animate slide-up">
+      Kami akan juga menggunakan Live Streaming Youtube untuk acara pernikahan kami. <br>
+      Saksikan melalui link yang telah disediakan dan bagikan kebahagiaan kami menggunakan Instagram Filter di Stories.
+      Jangan lupa men-tag akun pengantin untuk berpartisipasi.
+    </p>
+
+    <a href="#" class="live-button animate slide-left">
+      <i class="fa-brands fa-youtube animate slide-left"></i> Bergabung Live
+    </a>
+  </section>
+
+  <!-- CLOSING SECTION -->
+  <section class="closing-section">
+    <!-- Wave SVG -->
+    <div class="wave-top">
+      <svg viewBox="0 0 500 100" preserveAspectRatio="none">
+        <path d="M0,30 C150,100 350,0 500,70 L500,00 L0,0 Z" style="stroke: none; fill: white;"></path>
+      </svg>
+    </div>
+
+    <div class="closing-content animate fade-in">
+      <h2 class="closing-thankyou animate slide-down">Thankyou</h2>
+      <p class="closing-message animate word-by-word">
+        Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dalam hari bahagia kami.
+        Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan. <br />
+        Sampai jumpa di hari bahagia kami
+      </p>
+      <p class="closing-names animate fade-in">
+        Kami yang berbahagia: <br />
+        <span>Wulan &amp; Fariz</span><br />
+        <small>beserta keluarga</small>
+      </p>
+    </div>
+  </section>
+
+  <footer class="custom-footer">
+    <div class="footer-container">
+
+      <!-- Newsletter Signup -->
+      <div class="footer-section newsletter">
+        <h4>
+          Langkah Cerdas Menuju Pemasaran Web<br>
+          Raih Potensi Digital Maksimal Dengan<br>
+          ACHND
+        </h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email Address" required />
+          <button type="submit">Sign me up</button>
+        </form>
+        <p class="privacy-note">
+          Dengan mendaftar, Anda setuju dengan <a href="#">Kebijakan Privasi kami</a>
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Certified B Corp -->
+      <div class="footer-section achnd-footer">
+        <img src="image/logoachnd.png" alt="B Corporation Logo" class="glow-pulse-achnd" />
+        <p>
+          Kami berdedikasi untuk mengedukasi dan menjalin kolaborasi dengan bisnis yang memiliki visi sejalan,
+          demi menciptakan perubahan positif bagi lingkungan dan masyarakat. Bersama, kita mampu menciptakan dampak yang
+          berarti.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section contact">
+        <h5>Come Say Hello!</h5>
+        <span class="phone">+62 895-2348-4553</span>
+        <a href="#" class="contact-button">
+          Contact <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <p class="learn-link">
+          © 2025 Nendi Web Development — Front-End & Back-End Solutions. All rights reserved. Designed by
+          <a href="https://instagram.com/daysariansyahh" target="_blank">@daysariansyahh</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- HTML -->
+  <div class="floating-music" id="musicToggle">
+    <img src="image/xss.jpg" alt="Couple Photo" class="music-avatar" />
+    <audio id="bgMusic" src="audio/just-relax-11157.mp3" autoplay loop></audio>
+  </div>
+
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

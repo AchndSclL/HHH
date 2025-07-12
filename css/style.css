@@ -1,0 +1,2183 @@
+   /* RESET & GLOBAL */
+   /* RESET & GLOBAL STYLING */
+   * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+
+   html,
+   body {
+     height: 100%;
+     width: 100%;
+     font-family: 'Poppins', sans-serif;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+     /* Bayangan hitam lembut */
+     scroll-behavior: smooth;
+     background-color: #fff;
+     /* Warna dasar putih */
+     color: #000;
+     text-align: center;
+     /* Semua text default di tengah */
+     overflow-x: hidden;
+     overflow-y: auto;
+   }
+
+   .no-scroll {
+     overflow: hidden;
+     /* optional agar tetap terlihat seperti halaman diam */
+     height: 100vh;
+   }
+
+
+   #musicToggle:disabled {
+     opacity: 0.5;
+     pointer-events: none;
+   }
+
+
+
+
+
+   /* Base Animate */
+   .animate {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: all 1s ease;
+     will-change: opacity, transform;
+   }
+
+   .animate.visible {
+     opacity: 1;
+     transform: none;
+   }
+
+   /* Fade Effects */
+   .fade-in.visible {
+     opacity: 1;
+   }
+
+   .fade-out.visible {
+     opacity: 0;
+   }
+
+   /* Slide Effects */
+   .slide-left.visible {
+     transform: translateX(0);
+   }
+
+   .slide-right.visible {
+     transform: translateX(0);
+   }
+
+   .slide-up.visible {
+     transform: translateY(0);
+   }
+
+   .slide-down.visible {
+     transform: translateY(0);
+   }
+
+   .slide-left {
+     transform: translateX(-50px);
+   }
+
+   .slide-right {
+     transform: translateX(50px);
+   }
+
+   .slide-up {
+     transform: translateY(50px);
+   }
+
+   .slide-down {
+     transform: translateY(-50px);
+   }
+
+   /* Staggered Animation */
+   .staggered.visible {
+     animation: staggeredFade 0.6s ease forwards;
+   }
+
+   @keyframes staggeredFade {
+     0% {
+       opacity: 0;
+       transform: translateY(20px);
+     }
+
+     100% {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   /* Bounce-in */
+   .bounce-in.visible {
+     animation: bounceIn 1s ease;
+   }
+
+   @keyframes bounceIn {
+
+     0%,
+     20%,
+     50%,
+     80%,
+     100% {
+       transform: translateY(0);
+     }
+
+     40% {
+       transform: translateY(-30px);
+     }
+
+     60% {
+       transform: translateY(-15px);
+     }
+   }
+
+   /* Heartbeat */
+   .heart-beat.visible {
+     animation: heartbeat 1.5s infinite;
+   }
+
+   @keyframes heartbeat {
+
+     0%,
+     100% {
+       transform: scale(1);
+     }
+
+     14% {
+       transform: scale(1.3);
+     }
+
+     28% {
+       transform: scale(1);
+     }
+
+     42% {
+       transform: scale(1.3);
+     }
+
+     70% {
+       transform: scale(1);
+     }
+   }
+
+   /* Spin */
+   .spin.visible {
+     animation: spin 2s linear infinite;
+   }
+
+   @keyframes spin {
+     0% {
+       transform: rotate(0deg);
+     }
+
+     100% {
+       transform: rotate(360deg);
+     }
+   }
+
+   /* Swivel */
+   .swivel.visible {
+     animation: swivel 0.6s ease forwards;
+   }
+
+   @keyframes swivel {
+     from {
+       transform: rotateY(90deg);
+       opacity: 0;
+     }
+
+     to {
+       transform: rotateY(0);
+       opacity: 1;
+     }
+   }
+
+   /* Perspective Rotate */
+   .perspective-rotate.visible {
+     transform: rotateX(0);
+   }
+
+   .perspective-rotate {
+     transform: rotateX(90deg);
+     transform-origin: top;
+   }
+
+   /* Grayscale to Color */
+   .grayscale-to-color {
+     filter: grayscale(100%);
+     transition: filter 1s ease;
+   }
+
+   .grayscale-to-color.visible {
+     filter: grayscale(0%);
+   }
+
+   /* Glow Pulse */
+   .glow-pulse.visible {
+     animation: glowPulse 2s infinite;
+   }
+
+   @keyframes glowPulse {
+
+     0%,
+     100% {
+       box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+     }
+
+     50% {
+       box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+     }
+   }
+
+   /* Typewriter */
+   .typewriter {
+     overflow: hidden;
+     white-space: nowrap;
+     border-right: 2px solid;
+     animation: typing 4s steps(40, end) 1s forwards, blink 0.7s step-end infinite;
+   }
+
+   @keyframes typing {
+     from {
+       width: 0
+     }
+
+     to {
+       width: 100%
+     }
+   }
+
+   @keyframes blink {
+     50% {
+       border-color: transparent;
+     }
+   }
+
+   /* Typing Blink Only */
+   .typing-blink {
+     border-right: 2px solid;
+     animation: blink 0.7s step-end infinite;
+   }
+
+   /* Text Slide Up */
+   .text-slide-up.visible {
+     animation: slideUpText 1s ease forwards;
+   }
+
+   @keyframes slideUpText {
+     0% {
+       transform: translateY(100%);
+       opacity: 0;
+     }
+
+     100% {
+       transform: translateY(0);
+       opacity: 1;
+     }
+   }
+
+   /* Text Reveal */
+   .text-reveal::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: #fff;
+     animation: revealText 2s forwards;
+   }
+
+   @keyframes revealText {
+     0% {
+       left: 0;
+       width: 100%;
+     }
+
+     100% {
+       left: 100%;
+       width: 0;
+     }
+   }
+
+   /* Word by Word */
+   .word-by-word span {
+     display: inline-block;
+     opacity: 0;
+     transform: translateY(20px);
+     animation: wordFade 0.5s ease forwards;
+   }
+
+   .word-by-word.visible span {
+     animation-delay: calc(var(--i) * 0.1s);
+   }
+
+   @keyframes wordFade {
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   /* Tab Transition */
+   .tab-transition.visible {
+     animation: tabSlide 0.5s ease-in-out;
+   }
+
+   @keyframes tabSlide {
+     from {
+       opacity: 0;
+       transform: translateX(20px);
+     }
+
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   /* Parallax Effect */
+   [data-parallax] {
+     transition: transform 0.2s ease-out;
+     will-change: transform;
+   }
+
+
+
+
+
+
+
+
+   .hero {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     background: url('../image/xss.jpg') center center / cover no-repeat;
+     overflow: hidden;
+   }
+
+   .hero::before,
+   .hero::after {
+     content: none !important;
+     background: none !important;
+   }
+
+
+
+   .header {
+     position: absolute;
+     top: 5vh;
+     /* sesuai gambar */
+     width: 100%;
+     text-align: center;
+     color: white;
+   }
+
+   .subtitle {
+     font-family: "Ancizar Serif", serif;
+     font-size: 1.1rem;
+     letter-spacing: 2px;
+     margin-bottom: 0.5vh;
+     text-align: center;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+     /* Bayangan hitam lembut */
+   }
+
+
+   .hero .couple-name {
+     font-size: 2.5rem;
+     font-family: "Playfair Display", serif;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+     /* Bayangan hitam lembut */
+     font-optical-sizing: auto;
+     font-weight: 800;
+     text-align: center;
+     letter-spacing: 8px;
+
+     white-space: nowrap;
+     /* 🔒 Cegah teks dari pindah baris */
+     overflow: hidden;
+     /* 🔒 Sembunyikan bagian teks yang kelebihan */
+     text-overflow: ellipsis;
+     /* 🔒 Tambahkan "..." jika terlalu panjang */
+   }
+
+
+   .invitation {
+     position: absolute;
+     top: 68vh;
+     /* sesuai gambar */
+     width: 100%;
+     text-align: center;
+     color: white;
+     font-size: 0.95rem;
+     line-height: 1.6;
+   }
+
+   .guest-name {
+     font-family: "Playfair Display", serif;
+     font-weight: 500;
+     font-size: 1.05rem;
+     margin-top: 0.5vh;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+     /* Bayangan hitam lembut */
+   }
+
+   .disclaimer {
+     font-size: 0.75rem;
+     margin-top: 1vh;
+   }
+
+   .open-btn {
+     margin-top: 2vh;
+     padding: 0.5em 1.2em;
+     background: rgba(255, 255, 255, 0.1);
+     border: 1px solid white;
+     color: white;
+     font-size: 0.95rem;
+     border-radius: 4px;
+     cursor: pointer;
+   }
+
+   /* ===================================
+   HAPUS / GANTI RULE GENERIC BERIKUT:
+   ===================================
+   1) Buang atau comment-out:
+      h1 { font-size:5em; } 
+      h5, .guest-name, .open-invitation, .hero h5 { … }
+
+   2) Kalau benar-benar perlu styling global h1,
+      jadikan .hero .couple-name saja.
+
+   3) Jika ingin padding/margin khusus mobile di .guest-box,
+      bungkus di @media (max-width:…) seperti contoh di atas.
+*/
+
+   /* ====== SELURUH CSS LAINNYA TETAP ======
+   — tak saya sentuh, agar layout lain
+   tidak berubah.
+========================================= */
+
+
+
+
+
+
+   .verse-section {
+     position: relative;
+     background: url('../image/bbd.jpg') no-repeat center center/cover;
+     color: white;
+     padding: 80px 20px;
+     text-align: center;
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+   .verse-section::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.6);
+     z-index: 1;
+   }
+
+   .verse-content {
+     position: relative;
+     z-index: 2;
+     max-width: 800px;
+     margin: auto;
+   }
+
+   .verse-content h1 {
+     font-size: 3em;
+     font-family: 'Playfair Display', serif;
+     margin-bottom: 10px;
+   }
+
+   .verse-content h3 {
+     font-size: 1.5em;
+     font-weight: 400;
+     margin-bottom: 15px;
+   }
+
+   .verse-content .arabic {
+     font-size: 1.8em;
+     font-family: 'Amiri', serif;
+     direction: rtl;
+     margin-bottom: 15px;
+     line-height: 2;
+   }
+
+   .verse-content .translation {
+     font-size: 1.2em;
+     font-weight: 300;
+     max-width: 90%;
+     margin: auto;
+   }
+
+   /* Navbar Tetap di Bawah */
+   .navbar-container {
+     width: 100%;
+     background: rgba(255, 255, 255, 0.8);
+     height: 8vh;
+     /* Navbar lebih kecil */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     z-index: 1000;
+     transition: opacity 0.3s ease-in-out;
+     padding: 0 15px;
+     /* Padding hanya kiri-kanan */
+   }
+
+
+   /* Navbar Menghilang Saat Sidebar Muncul */
+   .navbar-container.hide {
+     opacity: 0;
+     pointer-events: none;
+   }
+
+   /* Styling Navbar */
+   .navbar {
+     width: 50%;
+     max-width: 1500px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     color: white;
+     font-family: 'Poppins', sans-serif;
+   }
+
+   /* Logo */
+   .logo {
+     font-size: 20px;
+     font-weight: bold;
+     color: white;
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+     /* Bayangan hitam lembut */
+   }
+
+   /* Tombol Menu untuk Mobile */
+   .menu-btn {
+     background: none;
+     border: none;
+     color: white;
+     font-size: 24px;
+     cursor: pointer;
+     display: block;
+     padding: 10px;
+     /* ➕ Tambahkan bayangan */
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+   }
+
+
+   /* Animasi saat Sidebar Muncul */
+   @keyframes slideIn {
+     from {
+       right: -300px;
+     }
+
+     to {
+       right: 0;
+     }
+   }
+
+   /* Sidebar Navigation */
+   .sidebar {
+     position: fixed;
+     top: 0;
+     right: -300px;
+     /* Sekarang di kanan layar */
+     width: 300px;
+     height: 100%;
+     background: rgba(255, 255, 255, 0.95);
+     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+     padding: 30px 20px;
+     transition: right 0.3s ease-in-out;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     z-index: 1100;
+     /* Agar tidak tertimpa elemen lain */
+   }
+
+   /* Tampilkan sidebar saat aktif */
+   .sidebar.show {
+     right: 0;
+   }
+
+   /* Styling untuk tombol close di sidebar */
+   .sidebar .close-btn {
+     background: none;
+     border: 2px solid #008CBA;
+     color: #008CBA;
+     font-size: 24px;
+     cursor: pointer;
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     padding: 5px 10px;
+     border-radius: 5px;
+   }
+
+   /* Styling untuk Link di Sidebar */
+   .sidebar a {
+     font-size: 18px;
+     color: #003366;
+     text-decoration: none;
+     padding: 15px 0;
+     /* Jarak antar menu lebih proporsional */
+     display: block;
+     text-transform: uppercase;
+     font-weight: bold;
+     transition: color 0.3s ease-in-out;
+   }
+
+   /* Efek Hover pada Link */
+   .sidebar a:hover {
+     color: #008CBA;
+   }
+
+
+
+
+
+   .bride-groom-section {
+     position: relative;
+     text-align: center;
+     padding: 80px 20px;
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     min-height: 50vh;
+   }
+
+   /* Background Gambar */
+   .bride {
+     background: url('../image/ken.jpg') no-repeat center center/cover;
+   }
+
+   .groom {
+     background: url('../image/mdf.jpg') no-repeat center center/cover;
+   }
+
+
+   /* Container untuk konten */
+   .container {
+     position: relative;
+     max-width: 600px;
+     z-index: 1;
+   }
+
+   /* Intro Text */
+   .intro-text {
+     font-size: 18px;
+     font-weight: 300;
+     line-height: 1.5;
+     margin-bottom: 30px;
+     color: white;
+   }
+
+   /* Title */
+   .section-title {
+     font-size: 45px;
+     font-family: 'Great Vibes', cursive;
+     margin-bottom: 20px;
+     color: white;
+   }
+
+   /* Profile Card */
+   .profile-card {
+     background: rgba(0, 0, 0, 0.6);
+     padding: 20px;
+     border-radius: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     max-width: 400px;
+     margin: auto;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   /* Profile Photo */
+   .profile-photo {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 3px solid white;
+   }
+
+   /* Profile Info */
+   .profile-info {
+     text-align: left;
+     padding-left: 15px;
+     color: white;
+   }
+
+   .profile-info h3 {
+     font-size: 20px;
+     margin: 5px 0;
+   }
+
+   .profile-info p {
+     font-size: 14px;
+     margin: 5px 0;
+   }
+
+   .profile-card:hover {
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+   }
+
+   /* Social Media */
+   .social {
+     display: flex;
+     align-items: center;
+     background: white;
+     color: black;
+     padding: 5px 10px;
+     border-radius: 20px;
+     font-size: 14px;
+     margin-top: 10px;
+   }
+
+   /* Styling untuk ikon Bootstrap */
+   .social i {
+     font-size: 16px;
+     margin-right: 5px;
+   }
+
+   .ampersand-separator {
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     transform: translate(-50%, -20%);
+     font-size: 120px;
+     font-family: 'Amiri', serif;
+     color: white;
+     z-index: 2;
+     text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+     pointer-events: none;
+
+     /* Tambahkan ini untuk menjalankan animasi */
+     animation: float 3s ease-in-out infinite;
+   }
+
+   /* Ini hanya definisi animasinya */
+   @keyframes float {
+     0% {
+       transform: translate(-50%, -20%);
+     }
+
+     50% {
+       transform: translate(-50%, -30%);
+     }
+
+     100% {
+       transform: translate(-50%, -20%);
+     }
+   }
+
+
+
+   .wedding-event {
+     background: url('../image/hhjj.jpg') no-repeat center center/cover;
+     color: white;
+     text-align: center;
+     padding: 60px 20px;
+     position: relative;
+     overflow: hidden;
+   }
+
+   .event-container {
+     background-color: rgba(0, 0, 0, 0.6);
+     border: 2px solid white;
+     border-radius: 150px 150px 40px 40px;
+     max-width: 600px;
+     margin: auto;
+     padding: 40px 25px;
+     position: relative;
+     box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+   }
+
+   .countdown {
+     display: flex;
+     justify-content: space-between;
+     gap: 10px;
+     margin-bottom: 30px;
+     font-size: 20px;
+     flex-wrap: wrap;
+   }
+
+   .countdown div {
+     flex: 1;
+     border-radius: 10px;
+     padding: 10px;
+   }
+
+   .countdown span {
+     font-size: 28px;
+     font-weight: bold;
+     display: block;
+   }
+
+   .countdown small {
+     font-size: 12px;
+     display: block;
+     margin-top: 5px;
+     letter-spacing: 1px;
+   }
+
+   .event-content {
+     border-top: 1px solid white;
+     padding-top: 30px;
+   }
+
+   .event-block {
+     margin-bottom: 50px;
+   }
+
+   .event-block h3 {
+     font-family: 'Playfair Display', serif !important;
+     font-size: 32px;
+     margin-bottom: 10px;
+     font-weight: normal;
+   }
+
+   .date,
+   .time,
+   .place,
+   .address {
+     margin: 5px 0;
+     font-size: 16px;
+     line-height: 1.5;
+   }
+
+   .map-btn {
+     margin-top: 15px;
+     display: inline-block;
+     padding: 10px 24px;
+     background-color: white;
+     color: black;
+     border-radius: 6px;
+     font-size: 14px;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     font-weight: 500;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   }
+
+   .map-btn:hover {
+     background-color: #f0f0f0;
+     transform: scale(1.05);
+   }
+
+
+   .rsvp-section {
+     background: url('../image/kkkl.jpg') no-repeat center center/cover;
+     color: white;
+     text-align: center;
+     padding: 60px 20px;
+   }
+
+   .rsvp-container {
+     background-color: rgba(0, 0, 0, 0.6);
+     border: 2px solid white;
+     border-radius: 50px;
+     max-width: 500px;
+     margin: auto;
+     padding: 40px 25px;
+     box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+     position: relative;
+     overflow: hidden;
+   }
+
+   /* Tambahan untuk efek double-outline */
+   .rsvp-container::before,
+   .rsvp-container::after {
+     content: "";
+     position: absolute;
+     border: 2px solid white;
+     border-radius: 60px;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     pointer-events: none;
+   }
+
+   .rsvp-container::after {
+     top: 4px;
+     left: 4px;
+     right: 4px;
+     bottom: 4px;
+     border-radius: 48px;
+     opacity: 0.8;
+   }
+
+   .rsvp-title {
+     font-family: 'Playfair Display', serif !important;
+     font-size: 36px;
+     margin-bottom: 15px;
+   }
+
+   .rsvp-subtitle {
+     font-size: 14px;
+     margin-bottom: 30px;
+     line-height: 1.6;
+   }
+
+   .rsvp-form {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+   }
+
+   .rsvp-form label {
+     font-size: 14px;
+     text-align: left;
+   }
+
+   .rsvp-form input,
+   .rsvp-form select {
+     padding: 12px 16px;
+     border-radius: 50px;
+     border: 2px solid white;
+     background: transparent;
+     color: white;
+     font-size: 14px;
+     outline: none;
+   }
+
+   .rsvp-form select {
+     appearance: none;
+     background-image: url("data:image/svg+xml,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: right 16px center;
+     background-size: 20px;
+
+     /* Tambahan ini yang kamu butuhkan */
+     background-color: rgba(0, 0, 0, 0.5);
+     color: white;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+   }
+
+   /* Tambahan baru untuk dropdown-nya */
+   .rsvp-form select option {
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+   }
+
+   .rsvp-form input::placeholder {
+     color: rgba(255, 255, 255, 0.7);
+   }
+
+   .rsvp-btn {
+     background-color: white;
+     color: black;
+     border: none;
+     padding: 12px 24px;
+     border-radius: 6px;
+     font-size: 14px;
+     font-weight: 500;
+     cursor: pointer;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+     transition: all 0.3s ease;
+   }
+
+   .rsvp-btn:hover {
+     background-color: #f0f0f0;
+     transform: scale(1.05);
+   }
+
+
+
+   .gallery-section {
+     padding: 60px 20px;
+     text-align: center;
+     color: white;
+     background: url('../image/iimk.jpg') no-repeat center center/cover;
+     position: relative;
+     overflow: hidden;
+   }
+
+   .gallery-title {
+     font-family: 'Great Vibes', cursive;
+     font-size: 45px;
+     margin-bottom: 40px;
+     border-top: 2px solid white;
+     border-bottom: 2px solid white;
+     display: inline-block;
+     padding: 10px 30px;
+   }
+
+   .gallery-wrapper {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 30px;
+   }
+
+   .gallery-item {
+     max-width: 80%;
+     overflow: hidden;
+     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+     transform-origin: center;
+   }
+
+   .gallery-item img {
+     width: 100%;
+     display: block;
+
+   }
+
+   /* Efek miring */
+   .tilt-left {
+     transform: rotate(-10deg);
+   }
+
+   .tilt-right {
+     transform: rotate(10deg);
+   }
+
+
+   .love-story-section {
+     padding: 60px 20px;
+     background: url('../image/rett.jpg') no-repeat center center/cover;
+     color: white;
+     text-align: center;
+   }
+
+   .love-story-title {
+     font-family: 'Great Vibes', cursive;
+     font-size: 40px;
+     margin-bottom: 40px;
+   }
+
+   .love-story-card {
+     max-width: 600px;
+     margin: 20px auto;
+     border-radius: 20px;
+     overflow: hidden;
+     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+   }
+
+   .love-story-bg {
+     background-size: cover;
+     background-position: center;
+     padding: 30px 20px;
+     border-radius: 20px;
+     min-height: 220px;
+     display: flex;
+     align-items: flex-end;
+     position: relative;
+   }
+
+   .love-story-bg::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.5);
+     backdrop-filter: blur(3px);
+     z-index: 0;
+     border-radius: 20px;
+   }
+
+   .love-story-content {
+     position: relative;
+     z-index: 1;
+     text-align: left;
+   }
+
+   .love-story-content h3 {
+     font-size: 20px;
+     font-weight: bold;
+     margin-bottom: 8px;
+   }
+
+   .love-story-content p {
+     font-size: 14px;
+     line-height: 1.6;
+   }
+
+   /* Penyempurnaan Wedding Gift agar match dengan desain */
+   .wedding-gift.section {
+     padding: 60px 20px;
+     text-align: center;
+     background-color: #ffffff;
+   }
+
+   /* Gunakan font heading seperti di bagian Ucapan & Doa */
+   .wedding-heading {
+     font-family: 'Great Vibes', cursive;
+     font-size: 2.2rem;
+     margin-bottom: 15px;
+   }
+
+   /* Deskripsi tetap rapi dan konsisten */
+   .wedding-description {
+     font-size: 1rem;
+     color: #333;
+     max-width: 600px;
+     margin: 0 auto 30px;
+     font-family: 'Poppins', sans-serif;
+   }
+
+   /* Samakan gaya tombol dengan struktur form */
+   .wedding-button {
+     display: inline-block;
+     padding: 10px 18px;
+     border: 2px solid #000;
+     border-radius: 5px;
+     color: #000;
+     font-weight: 500;
+     text-decoration: none;
+     font-family: 'Poppins', sans-serif;
+     transition: all 0.3s ease;
+     background-color: transparent;
+   }
+
+   .wedding-button i {
+     margin-right: 6px;
+   }
+
+   .wedding-button:hover {
+     background-color: #000;
+     color: #fff;
+   }
+
+   /* Tambahan opsional: dekorasi atas agar match */
+   .wedding-gift::before {
+     content: "";
+     display: block;
+     width: 100%;
+     height: 30px;
+     background: url('your-decorative-border.svg') no-repeat center;
+     background-size: contain;
+     margin-bottom: 20px;
+   }
+
+   /* Modal Styles */
+   /* Modal Styling */
+   /* Modal Styling */
+   .modal {
+     display: none;
+     position: fixed;
+     z-index: 999;
+     padding-top: 100px;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.5);
+   }
+
+   .modal-content {
+     background-color: #fff;
+     margin: auto;
+     padding: 2rem;
+     border: 1px solid #888;
+     width: 90%;
+     max-width: 400px;
+     border-radius: 12px;
+     position: relative;
+     text-align: center;
+     animation: fadeIn 0.3s ease-in-out;
+   }
+
+   @keyframes fadeIn {
+     from {
+       opacity: 0;
+       transform: scale(0.95);
+     }
+
+     to {
+       opacity: 1;
+       transform: scale(1);
+     }
+   }
+
+   .close-button {
+     position: absolute;
+     top: 10px;
+     right: 20px;
+     font-size: 28px;
+     font-weight: bold;
+     color: #aaa;
+     cursor: pointer;
+   }
+
+   #copy-button {
+     margin-top: 15px;
+     padding: 10px 20px;
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     font-weight: bold;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+
+   #copy-message {
+     color: green;
+     font-size: 0.9rem;
+     margin-top: 10px;
+     display: none;
+   }
+
+
+
+
+
+
+   /* GUEST WISHES STYLES */
+   .guest-section {
+     padding: 60px 20px;
+     text-align: center;
+     background-color: #ffffff;
+   }
+
+   .guest-border-top {
+     width: 100%;
+     height: 30px;
+     background-size: contain;
+     margin-bottom: 20px;
+   }
+
+   .guest-heading {
+     font-family: 'Great Vibes', cursive;
+     font-size: 2.2rem;
+     margin-bottom: 15px;
+   }
+
+   .guest-description {
+     font-size: 1rem;
+     color: #333;
+     max-width: 600px;
+     margin: 0 auto 30px;
+     font-family: 'Poppins', sans-serif;
+   }
+
+   /* FORM */
+   .guest-form {
+     max-width: 500px;
+     margin: 0 auto;
+     text-align: left;
+   }
+
+   .form-label {
+     display: block;
+     font-weight: 600;
+     margin-bottom: 8px;
+     font-size: 0.95rem;
+     font-family: 'Poppins', sans-serif;
+   }
+
+   .form-input,
+   .form-textarea {
+     width: 100%;
+     padding: 10px 14px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 6px;
+     font-size: 1rem;
+     font-family: 'Poppins', sans-serif;
+   }
+
+   .submit-button {
+     display: inline-flex;
+     align-items: center;
+     background-color: #000;
+     color: #fff;
+     border: none;
+     padding: 10px 16px;
+     border-radius: 4px;
+     cursor: pointer;
+     font-weight: 600;
+     font-size: 0.95rem;
+     gap: 8px;
+     transition: background 0.3s ease;
+   }
+
+   .submit-button:hover {
+     background-color: #333;
+   }
+
+
+
+
+
+
+
+
+   /* =============================
+   STYLE UNTUK HASIL UCAPAN TAMU
+   ============================= */
+
+   .wishes-container {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     padding: 10px 15px;
+     max-height: 400px;
+     overflow-y: auto;
+   }
+
+   /* Setiap kotak ucapan */
+   .wish-item {
+     background-color: #f9f6f2;
+     border: 1px solid #333;
+     border-radius: 10px;
+     padding: 15px;
+     text-align: left;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+     font-size: 14px;
+     color: #000;
+   }
+
+   /* Nama pengirim */
+   .wish-item .wish-name {
+     font-weight: bold;
+     font-size: 15px;
+     margin-bottom: 5px;
+   }
+
+   /* Isi ucapan */
+   .wish-item .wish-message {
+     margin-bottom: 10px;
+     line-height: 1.4;
+     white-space: pre-line;
+   }
+
+   /* Waktu kirim */
+   .wish-item .wish-time {
+     font-weight: bold;
+     font-size: 13px;
+     color: #333;
+   }
+
+   /* Scrollbar agar sesuai gaya */
+   .wishes-container::-webkit-scrollbar {
+     width: 5px;
+   }
+
+   .wishes-container::-webkit-scrollbar-thumb {
+     background-color: #aaa;
+     border-radius: 5px;
+   }
+
+   .wishes-container::-webkit-scrollbar-track {
+     background-color: transparent;
+   }
+
+
+
+
+
+
+
+
+
+
+   /* LIVE STREAMING SECTION */
+   .live-streaming-section {
+     background-color: #fff;
+     padding: 50px 20px;
+     max-width: 600px;
+     margin: 40px auto;
+     text-align: center;
+     border-radius: 16px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+     position: relative;
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+   }
+
+   /* Ornamental top & bottom flourishes */
+   .live-streaming-section::before,
+   .live-streaming-section::after {
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 20px;
+     left: 0;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+   }
+
+   .live-streaming-section::before {
+     top: 0;
+     background-image: radial-gradient(circle at left, #000 1.5px, transparent 1.5px),
+       radial-gradient(circle at center, #000 1.5px, transparent 1.5px),
+       radial-gradient(circle at right, #000 1.5px, transparent 1.5px);
+     background-size: 20px 20px;
+     background-position: left 10px center, center center, right 10px center;
+   }
+
+   .live-streaming-section::after {
+     bottom: 0;
+     background-image: radial-gradient(circle at left, #000 1.5px, transparent 1.5px),
+       radial-gradient(circle at center, #000 1.5px, transparent 1.5px),
+       radial-gradient(circle at right, #000 1.5px, transparent 1.5px);
+     background-size: 20px 20px;
+     background-position: left 10px center, center center, right 10px center;
+   }
+
+   /* Heading */
+   .live-heading {
+     font-family: 'Great Vibes', cursive;
+     font-size: 2.2rem;
+     margin-bottom: 16px;
+   }
+
+   /* Deskripsi */
+   .live-description {
+     font-size: 1rem;
+     line-height: 1.6;
+     color: #333;
+     margin-bottom: 24px;
+   }
+
+   /* Tombol */
+   .live-button {
+     display: inline-flex;
+     align-items: center;
+     background-color: #000;
+     color: #fff;
+     padding: 10px 20px;
+     border-radius: 6px;
+     text-decoration: none;
+     font-weight: 600;
+     font-size: 0.95rem;
+     gap: 8px;
+     transition: background 0.3s ease;
+   }
+
+   .live-button i {
+     font-size: 1rem;
+   }
+
+   .live-button:hover {
+     background-color: #333;
+   }
+
+   /* CLOSING SECTION */
+   .closing-section {
+     position: relative;
+     background-image: url('../image/lls.jpg');
+     /* Ganti dengan gambar kamu */
+     background-size: cover;
+     background-position: center;
+     color: white;
+     text-align: center;
+     padding: 100px 20px 60px;
+     font-family: 'Poppins', sans-serif;
+     overflow: hidden;
+   }
+
+   .wave-top {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100px;
+     background: transparent;
+     z-index: 1;
+   }
+
+   .wave-top svg {
+     display: block;
+     width: 100%;
+     height: 100%;
+   }
+
+   .closing-content {
+     position: relative;
+     z-index: 2;
+     max-width: 700px;
+     margin: 0 auto;
+     padding-top: 80px;
+     /* atau 300px tergantung tinggi wajah */
+   }
+
+   .closing-thankyou {
+     font-family: 'Great Vibes', cursive;
+     font-size: 2.8rem;
+     margin-bottom: 20px;
+   }
+
+   .closing-message {
+     font-size: 1rem;
+     margin-bottom: 30px;
+     line-height: 1.7;
+   }
+
+   .closing-names {
+     font-weight: bold;
+     font-size: 1.3rem;
+   }
+
+   .closing-names span {
+     font-size: 2rem;
+     font-family: 'Playfair Display', serif;
+   }
+
+   .closing-names small {
+     display: block;
+     margin-top: 6px;
+     font-weight: normal;
+     font-size: 0.95rem;
+   }
+
+
+
+
+
+   /* footer */
+.custom-footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  padding-bottom: 80px;
+  /* atau nilai yang sesuai dengan tinggi navbar kamu */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.footer-section h5 {
+  font-size: 1rem;
+}
+
+
+.newsletter h4 {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background-color: #00ff00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.privacy-note {
+  font-size: 0.75rem;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.privacy-note a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+
+
+
+.achnd-footer img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  /* Jarak ke teks di bawah */
+  outline: 2px solid #a78bfa;
+  /* idle outline warna ungu */
+  outline-offset: 0px;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+}
+
+.achnd-footer img:hover {
+  transform: scale(1.05);
+  border-radius: 0;
+  outline: 2px solid #66fcf1;
+  outline-offset: 0px;
+  box-shadow:
+    0 0 3px #66fcf1,
+    0 0 6px #66fcf1,
+    0 0 12px #66fcf1;
+
+  
+}
+
+.achnd-footer img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px #66fcf1;
+}
+
+
+
+/* Animasi idle (warna ungu) */
+.glow-pulse-achnd {
+  animation: glowPulsePurple 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Keyframes warna ungu */
+@keyframes glowPulsePurple {
+  0% {
+    box-shadow: 0 0 10px #a78bfa;
+  }
+
+  50% {
+    box-shadow: 0 0 10px #a78bfa;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #a78bfa;
+  }
+}
+
+
+
+
+
+.achnd-footer h5,
+.contact h5 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.achnd-footer p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.learn-link {
+  color: #66fcf1;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.contact address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+
+.phone {
+  color: #fdffff !important;
+  font-weight: bold;
+  /* Safari fix: mencegah auto select / popup */
+  -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  /* standar untuk browser lain */
+}
+
+a[href^="tel"] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background-color: #00ff00;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.learn-link a {
+  color: inherit;
+  /* Warna mengikuti warna teks induknya */
+  text-decoration: none;
+  /* Menghilangkan garis bawah */
+}
+
+
+
+
+
+   /* Background Music */
+   .floating-music {
+     position: fixed;
+     bottom: 80px;
+     /* dinaikkan dari 20px */
+     left: 20px;
+     z-index: 9999;
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     overflow: hidden;
+     cursor: pointer;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+   .floating-music:hover {
+     transform: scale(1.05);
+   }
+
+   .music-avatar {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 50%;
+   }
+
+   /* Animasi ketika musik diputar */
+   .floating-music.playing {
+     animation: pulse 2s ease-out infinite;
+     will-change: box-shadow;
+   }
+
+   .floating-music.playing .music-avatar {
+     animation: rotate 5s linear infinite;
+   }
+
+   @keyframes rotate {
+     0% {
+       transform: rotate(0deg);
+     }
+
+     100% {
+       transform: rotate(360deg);
+     }
+   }
+
+   @keyframes pulse {
+     0% {
+       box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7);
+     }
+
+     50% {
+       box-shadow: 0 0 0 15px rgba(255, 105, 180, 0);
+     }
+
+     100% {
+       box-shadow: 0 0 0 0 rgba(255, 105, 180, 0);
+     }
+   }
+
+
+   /* Media query untuk iPhone SE dan Samsung Galaxy S8 */
+   @media screen and (max-width: 380px) {
+     .hero .couple-name {
+       font-size: 2rem;
+       /* Lebih kecil agar tidak terpotong */
+       letter-spacing: 10px;
+       /* Sedikit dikurangi agar lebih pas */
+       white-space: normal;
+       /* Izinkan teks turun ke baris baru */
+       text-overflow: unset;
+       /* Hapus efek "..." */
+     }
+   }
+
+
+   /* Untuk iPhone 12 Pro */
+   @media (min-width: 390px) and (max-width: 393px) and (max-height: 850px) {
+     .floating-music {
+       bottom: 70px !important;
+       left: 15px;
+       width: 50px;
+       height: 50px;
+     }
+
+     .hero .couple-name {
+       font-size: 2rem;
+       /* Lebih kecil agar tidak terpotong */
+       letter-spacing: 10px;
+       /* Sedikit dikurangi agar lebih pas */
+       white-space: normal;
+       /* Izinkan teks turun ke baris baru */
+       text-overflow: unset;
+       /* Hapus efek "..." */
+     }
+   }
+
+   /* Untuk Pixel 7 dan Galaxy S20 Ultra (ukuran hampir identik) */
+   @media (min-width: 410px) and (max-width: 414px) and (min-height: 900px) and (max-height: 920px) {
+     .floating-music {
+       bottom: 70px !important;
+       left: 15px;
+       width: 50px;
+       height: 50px;
+     }
+   }
+
+
+
+   /* ======================== */
+   /* 🔹 MOBILE: max 480px     */
+   /* ======================== */
+   @media (max-width: 480px) {
+     .hero h5 {
+       font-size: 18px;
+       margin-bottom: 400px;
+     }
+
+     .floating-music {
+       bottom: 50px;
+       left: 15px;
+       width: 50px;
+       height: 50px;
+     }
+   }
+
+   /* ========================== */
+   /* 🔹 MOBILE MEDIUM: ≤ 600px  */
+   /* ========================== */
+   @media (max-width: 600px) {
+     .closing-thankyou {
+       font-size: 2.2rem;
+     }
+
+     .closing-message {
+       font-size: 0.95rem;
+     }
+
+     .closing-names {
+       font-size: 1.1rem;
+     }
+
+     .closing-names span {
+       font-size: 1.6rem;
+     }
+
+     .date {
+       margin: 15px 0 10px;
+     }
+   }
+
+   /* ======================== */
+   /* 🔹 TABLET & MOBILE: ≤768px */
+   /* ======================== */
+   @media (max-width: 768px) {
+     h1 {
+       font-size: 2.5em;
+     }
+
+     .date,
+     .guest-name,
+     .note {
+       font-size: 1.2em;
+     }
+
+     .hero h5 {
+       font-size: 18px;
+       margin-bottom: 170px;
+     }
+
+     .verse-content h1 {
+       font-size: 2.5em;
+     }
+
+     .verse-content .arabic {
+       font-size: 1.5em;
+     }
+
+     .verse-content .translation {
+       font-size: 1em;
+     }
+
+     .bride-groom-section {
+       padding: 100px 40px;
+     }
+
+     .profile-card {
+       max-width: 500px;
+       padding: 25px 20px;
+     }
+
+     .profile-photo {
+       width: 110px;
+       height: 110px;
+     }
+
+     .profile-info h3 {
+       font-size: 22px;
+     }
+
+     .profile-info p,
+     .social {
+       font-size: 15px;
+     }
+
+     .social {
+       padding: 6px 10px;
+     }
+
+     .countdown {
+       font-size: 16px;
+     }
+
+     .countdown span {
+       font-size: 22px;
+     }
+
+     .event-container {
+       border-radius: 100px 100px 30px 30px;
+       padding: 30px 20px;
+     }
+
+     .event-block h3 {
+       font-size: 28px;
+     }
+
+     .map-btn {
+       padding: 8px 20px;
+       font-size: 13px;
+     }
+
+     .gallery-wrapper {
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: center;
+     }
+
+     .gallery-item {
+       width: 40%;
+     }
+
+     .love-story-title {
+       font-size: 50px;
+     }
+
+     .love-story-content h3 {
+       font-size: 24px;
+     }
+
+     .love-story-content p {
+       font-size: 16px;
+     }
+
+     .love-story-card {
+       margin-bottom: 40px;
+     }
+
+     .navbar-container {
+       height: 6vh;
+       padding: 0 10px;
+     }
+
+     .gift-wishes-section {
+       flex-direction: row;
+       align-items: flex-start;
+       justify-content: space-between;
+     }
+
+     .gift-section,
+     .wishes-section {
+       flex: 1;
+       padding: 1rem;
+     }
+
+     .guest-wishes-display {
+       max-height: 400px;
+     }
+
+     .guest-box {
+       margin-top: 10px;
+       padding: 1rem 1.5rem;
+     }
+   }
+
+   /* ================================ */
+   /* 🔹 KHUSUS iPhone XR & tinggi 896px+ */
+   /* ================================ */
+   @media (min-width: 414px) and (min-height: 896px) {
+     .floating-music {
+       bottom: 70px;
+     }
+   }
+
+   /* ======================== */
+   /* 🔹 DESKTOP: ≥ 1024px     */
+   /* ======================== */
+   @media (min-width: 1024px) {
+     h1 {
+       font-size: 5em;
+     }
+
+     .date,
+     .guest-name {
+       font-size: 2em;
+     }
+
+     .note {
+       font-size: 1.3em;
+     }
+
+     .open-invitation {
+       font-size: 1.4em;
+       padding: 16px 32px;
+     }
+
+     .verse-content h1 {
+       font-size: 4em;
+     }
+
+     .verse-content h3 {
+       font-size: 2em;
+     }
+
+     .verse-content .arabic {
+       font-size: 2.2em;
+     }
+
+     .verse-content .translation {
+       font-size: 1.5em;
+     }
+
+     .bride-groom-section {
+       padding: 120px 60px;
+     }
+
+     .profile-card {
+       max-width: 600px;
+       padding: 30px;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+
+     .profile-card:hover {
+       transform: scale(1.05);
+       box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+     }
+
+     .profile-photo {
+       width: 120px;
+       height: 120px;
+     }
+
+     .profile-info h3 {
+       font-size: 24px;
+     }
+
+     .profile-info p,
+     .social {
+       font-size: 16px;
+     }
+
+     .social {
+       padding: 8px 12px;
+     }
+
+     .gallery-wrapper {
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 40px;
+     }
+
+     .gallery-item {
+       width: 40%;
+     }
+
+     .tilt-left {
+       transform: rotate(-6deg);
+     }
+
+     .tilt-right {
+       transform: rotate(6deg);
+     }
+
+     .floating-music {
+       bottom: 80px;
+       left: 20px;
+       width: 60px;
+       height: 60px;
+     }
+   }
+
+   /* ======================== */
+   /* 🔹 UNIVERSAL (tanpa media query) */
+   /* ======================== */
+   .navbar {
+     width: 90%;
+   }
+
+   .sidebar {
+     width: 250px;
+   }
+
+   .sidebar a {
+     font-size: 16px;
+     padding: 12px 0;
+   }
